@@ -1,0 +1,57 @@
+[h1]Spicebound:Core Extras 0.1.0[/h1]
+is a supplementary mod for Spicebound:Core. It carries non-clientside patches that help better reflect certain visual changes made by the main mod.
+[h3]Join the Discord![/h3]
+[url=https://discord.gg/4nN8KHBY6R]My personal Discord[/url] contains categories for things that I work on. I'd recommend joining if you're interested in seeing early previews of what's being worked on.
+
+[hr][/hr]
+[h2]So like... what is this, exactly?[/h2]
+This mod currently carries:
+[list]
+[*]Item tooltip patches (things like the visual name, description, etc)
+[*]Item icon patches (mostly to give weapons proper 16px icons)
+[/list]
+[h3]That's not a lot. Can't it just be in the main mod?[/h3]
+[b]Short answer:[/b] it breaks things in multiplayer. Having the culprits be in a separate mod allows the main mod to retain clientside functionality without the multiplayer repurcussions, in case not everyone wants it.
+
+[b]Long answer:[/b]
+[u]Item metadata is stupid.[/u]
+Like many games, Starbound will refuse to stack items with mismatched names or descriptions, even if they still have the same internal item ID. This is known as the item's "metadata".
+The problem with this is mostly when it comes to multiplayer clients. If two people are playing cooperatively, and one person wants Spicebound but the other doesn't, they will be actively creating items that cannot stack because of differing metadata. The non-Spicebound client mines and crafts items with vanilla data, while the Spicebound client does the same but with the modified Spicebound data.
+This results in storage issues, as containers will fill up more quickly if there are two versions of many items.
+
+[u]But it can get even more stupid.[/u]
+Something that Spicebound does - and will continue to do, frequently - is grant proper icons to items without icons. This is usually for 'activeitems' such as weapons, which have a trend of using themselves as an icon. The exceptions to this are usually bows, for some reason.
+The problem here is that to accomplish this, Spicebound patches the item to use a custom filepath; it doesn't have an image to replace to begin with. This is no longer strictly clientside, as the icon filepath is baked into the item's metadata.
+The result is that the item, when loaded by a non-Spicebound client, promptly causes a crash due to a missing asset; it can't load an image that, to it, doesn't exist. This can be especially damaging if the item was picked up, as the character's inventory can no longer be opened unless they download Spicebound or load a backup of the character file.
+
+[hr][/hr]
+[h2]Is this mod compatible with X?[/h2]
+[b]This mod IS NOT STRICTLY CLIENT-SIDE and requires ALL PLAYERS to have the mod in order to function correctly.[/b] As detailed in the previous section, you may encounter weirdness and breakage otherwise. You've been warned!
+As for compatibility with other mods, it should be fine. Code thus far is entirely in the form of unintrusive patches.
+
+[b]Found a bug? Leave a comment or start a discussion![/b]
+
+[hr][/hr]
+[h2]Can you add cross-mod support for X?[/h2]
+There's already a fair bit of cross-mod content that I want to do (alongside further vanilla content updates), although I don't know what exactly I'll be doing next or when I'll do it.
+Also, I'm not familiar with every mod out there! If you're the owner of (or somehow affiliated with) a mod that you want me to add support for, consider reaching out to ask.
+
+[hr][/hr]
+[h2]How often does this mod update?[/h2]
+The goal is to update this mod every 1-3 months at the absolute least.
+Despite the fact that I'm currently working on a much larger content mod, Spicebound is my current primary outlet for spriting practice. I do things at my leisure, but usually this ends up being quite often with a fair bit of content between updates. This also means that there's no telling what I'll do next - everything's done on a whim. I pick things to resprite almost at random or as I see things that I think need it.
+
+[b]CURRENT FOCUS:[/b] none
+[b]CURRENT STATUS:[/b] in active development
+
+[h2]Credits go to[/h2]
+[*][b]SpicySpaceSnake[/b] ([url=https://spicyspacesnake.carrd.co/]that's me![/url]): main artist and programmer
+[h3]And a special thanks to[/h3]
+[list]
+[*][b]All of my partners[/b], for being a bunch of absolutely amazing people
+[*][b]Najja/Dyalt, Kirisis, and many others[/b] that I've either worked with or gotten advice from, for their previous and continued support
+
+[*]and [b]YOU[/b], for taking the time to check out this mod!
+[/list]
+
+Please be sure to rate on your way out, and share this with anyone you think might like it. Happy Starbounding!

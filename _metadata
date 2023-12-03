@@ -1,11 +1,12 @@
 {
-  "name" : "spicebound",
-  "friendlyName" : "Spicebound:Core",
+  "name" : "spiceboundplus",
+  "friendlyName" : "Spicebound:Core Extras",
   "version" : "0.1.0",
   "author" : "SpicySpaceSnake",
   "tags" : "Miscellaneous|User Interface",
-  "description" : "A resource pack for Starbound, aiming to polish a variety of sprites from vanilla and many mods with no specific theme.",
-  "priority" : 9000,
+  "description" : "A supplementary mod to Spicebound:Core, carrying non-clientside patches that help better reflect certain visual changes.",
+  "priority" : 9001,
+  "requires" : ["spicebound"],
   "includes" : ["FrackinUniverse", "Arcana"],
   "steamContentId" : "",
   "link" : ""
