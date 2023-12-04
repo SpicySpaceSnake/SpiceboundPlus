@@ -22,7 +22,7 @@ This results in storage issues, as containers will fill up more quickly if there
 [u]But it can get even more stupid.[/u]
 Something that Spicebound does - and will continue to do, frequently - is grant proper icons to items without icons. This is usually for 'activeitems' such as weapons, which have a trend of using themselves as an icon. The exceptions to this are usually bows, for some reason.
 The problem here is that to accomplish this, Spicebound patches the item to use a custom filepath; it doesn't have an image to replace to begin with. This is no longer strictly clientside, as the icon filepath is baked into the item's metadata.
-The result is that the item, when loaded by a non-Spicebound client, promptly causes a crash due to a missing asset; it can't load an image that, to it, doesn't exist. This can be especially damaging if the item was picked up, as the character's inventory can no longer be opened unless they download Spicebound or load a backup of the character file.
+The result is that the item, when loaded by a non-Spicebound client, throws an "asset missing" exception in the log, and the item icon doesn't appear on their end.
 
 [hr][/hr]
 [h2]Is this mod compatible with X?[/h2]
