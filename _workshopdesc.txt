@@ -1,4 +1,4 @@
-[h1]Spicebound:Core Extras 0.1.0[/h1]
+[h1]Spicebound:Core Extras 1.0.0[/h1]
 is a supplementary mod for Spicebound:Core. It carries non-clientside patches that help better reflect certain visual changes made by the main mod.
 [h3]Join the Discord![/h3]
 [url=https://discord.gg/4nN8KHBY6R]My personal Discord[/url] contains categories for things that I work on. I'd recommend joining if you're interested in seeing early previews of what's being worked on.
@@ -9,9 +9,10 @@ This mod currently carries:
 [list]
 [*]Item tooltip patches (things like the visual name, description, etc)
 [*]Item icon patches (mostly to give weapons proper 16px icons)
+[*]Fullbright layers for certain entities without them
 [/list]
 [h3]That's not a lot. Can't it just be in the main mod?[/h3]
-[b]Short answer:[/b] it breaks things in multiplayer. Having the culprits be in a separate mod allows the main mod to retain clientside functionality without the multiplayer repurcussions, in case not everyone wants it.
+[b]Short answer:[/b] it breaks things in multiplayer. Having the culprits be in a separate mod allows the main mod to retain clientside functionality without the multiplayer repurcussions, in case not everyone in a playthrough wants it.
 
 [b]Long answer:[/b]
 [u]Item metadata is stupid.[/u]
@@ -20,20 +21,24 @@ The problem with this is mostly when it comes to multiplayer clients. If two peo
 This results in storage issues, as containers will fill up more quickly if there are two versions of many items.
 
 [u]But it can get even more stupid.[/u]
-Something that Spicebound does - and will continue to do, frequently - is grant proper icons to items without icons. This is usually for 'activeitems' such as weapons, which have a trend of using themselves as an icon. The exceptions to this are usually bows, for some reason.
-The problem here is that to accomplish this, Spicebound patches the item to use a custom filepath; it doesn't have an image to replace to begin with. This is no longer strictly clientside, as the icon filepath is baked into the item's metadata.
+Something that Spicebound does - and will continue to do, frequently - is grant proper icons to items without icons. This is usually for 'activeitems' such as weapons, which have a trend of using their held sprites as an icon - notable exceptions being bows, for some reason.
+The problem here is that to accomplish this, Spicebound patches the item to use a different icon filepath; it doesn't have an image to replace to begin with and needs to add one itself. This is no longer strictly clientside, as the icon filepath is baked into the item's metadata.
 The result is that the item, when loaded by a non-Spicebound client, throws an "asset missing" exception in the log, and the item icon doesn't appear on their end.
+
+[u]The solution?[/u]
+Core is strictly confined to only carry clientside changes, while Core+ exists for when [i]everyone[/i] wants the extra changes.
 
 [hr][/hr]
 [h2]Is this mod compatible with X?[/h2]
-[b]This mod IS NOT STRICTLY CLIENT-SIDE and requires ALL PLAYERS to have the mod in order to function correctly.[/b] As detailed in the previous section, you may encounter weirdness and breakage otherwise. You've been warned!
-As for compatibility with other mods, it should be fine. Code thus far is entirely in the form of unintrusive patches.
+[b]This mod IS NOT STRICTLY CLIENT-SIDE and requires ALL PLAYERS to have the mod in order to function correctly.[/b] As detailed in the previous section, you'll likely encounter weirdness otherwise - it might be benign, or it might crash your game. You've been warned!
+Core+ has also been set to require Core, as a precaution. If your game crashes on startup, this might be why - it's also good to check your log file.
+As for compatibility with other mods, it should be fine. Code thus far is mostly in the form of unintrusive patches.
 
 [b]Found a bug? Leave a comment or start a discussion![/b]
 
 [hr][/hr]
 [h2]Can you add cross-mod support for X?[/h2]
-There's already a fair bit of cross-mod content that I want to do (alongside further vanilla content updates), although I don't know what exactly I'll be doing next or when I'll do it.
+There's already a fair bit of support for other mods, and more that I want to do (alongside further vanilla-related updates), although I don't know what exactly I'll be doing next or when I'll do it.
 Also, I'm not familiar with every mod out there! If you're the owner of (or somehow affiliated with) a mod that you want me to add support for, consider reaching out to ask.
 
 [hr][/hr]
@@ -48,7 +53,7 @@ Despite the fact that I'm currently working on a much larger content mod, Spiceb
 [*][b]SpicySpaceSnake[/b] ([url=https://spicyspacesnake.carrd.co/]that's me![/url]): main artist and programmer
 [h3]And a special thanks to[/h3]
 [list]
-[*][b]All of my partners[/b], for being a bunch of absolutely amazing people
+[*][b]My partners[/b], for being a bunch of absolutely amazing people
 [*][b]Najja/Dyalt, Kirisis, and many others[/b] that I've either worked with or gotten advice from, for their previous and continued support
 
 [*]and [b]YOU[/b], for taking the time to check out this mod!
