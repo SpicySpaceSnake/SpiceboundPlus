@@ -1,0 +1,12 @@
+[
+  {
+    "op": "replace",
+    "path": "/shortdescription",
+    "value": "Erchius Fluid"
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "An odd, slimy substance said to be produced by erchius crystals. Reacts well in generators."
+  }
+]

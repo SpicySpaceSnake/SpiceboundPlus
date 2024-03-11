@@ -1,0 +1,12 @@
+[
+  {
+    "op": "replace",
+    "path": "/shortdescription",
+    "value": "Pure Erchius Crystal"
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "An exceptionally pure chunk of erchius crystal. Used to power FTL technology, though still not fully understood."
+  }
+]
