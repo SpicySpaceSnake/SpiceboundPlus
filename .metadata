@@ -1,13 +1,13 @@
 {
-  "name" : "spiceboundplus",
-  "friendlyName" : "Spicebound:Core Extras",
-  "version" : "1.0.0",
   "author" : "SpicySpaceSnake",
-  "tags" : "Miscellaneous|User Interface",
   "description" : "A supplementary mod to Spicebound:Core, carrying non-clientside patches that help better reflect certain visual changes.",
+  "friendlyName" : "Spicebound:Core Extras",
+  "includes" : ["FrackinUniverse"],
+  "link" : "",
+  "name" : "spiceboundplus",
   "priority" : 9001,
   "requires" : ["spicebound"],
-  "includes" : ["FrackinUniverse"],
   "steamContentId" : "",
-  "link" : ""
+  "tags" : "Crafting and Building|Miscellaneous|NPCs and Creatures",
+  "version" : "1.0.0"
 }
